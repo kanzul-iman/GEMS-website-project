@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery page</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+     <!-- custom js -->
+    <script src="script.js" defer></script>
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(5px) brightness(0.7);
+  z-index: 1;
+}
+
+/* ========= Foreground Text ========= */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  padding-top: 180px;
+  padding-left: 5%;
+}
+
+/* ========= Breadcrumb Links ========= */
+.hero-text a {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.hero-text a[href*="index.html"] {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-text a[href*="contact.html"] {
+  color: #ffc107;
+  text-decoration: none;
+}
+
+/* ========= Info Strip on top ========= */
+.info-strip {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  z-index: 10;
+  position: relative;
+}
+
+/* ========= Navbar White Background ========= */
+.navbar {
+  background-color: white !important;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+ /* Header Section */
+    header {
+      text-align: center;
+      background: url("images/about-small.webp") no-repeat center top / cover;
+      object-fit: cover;
+      background-color: #f3f3f3;
+      padding: 20px;
+      border-bottom: 2px solid #222;
+      margin-top: 20px;
+    }
+    header h1 {
+      color: white ;
+      font-family: 'Pacifico', cursive;
+    }
+    header p {
+      font-family: 'Quicksand', sans-serif;
+      color: white;
+    }
+
+    /* Gallery Section */
+    section.gallery {
+      padding: 40px 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      opacity: 0.9;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background-color: #f3f3f3;
+      border-top: 2px solid #222;
+      margin-top: 45px;
+    }
+    footer span {
+      font-family: 'Quicksand', sans-serif;
+    }
+    footer a {
+      color: #000;
+      text-decoration: none;
+      font-family: 'Quicksand', sans-serif;
+    }
+    footer a:hover {
+      color: #006;
+    }
+
+</style>
+
+</head>
+<body>
+
+  <!-- Top white info bar -->
+<div class="info-strip d-none d-md-flex justify-content-between align-items-center">
+  <div class="d-flex gap-3">
+     <a href="https://wa.me/92333-2702299" target="_blank"><i class="icon bi-whatsapp"></i></a>
+    <a href="https://www.facebook.com/gemscateres" target="_blank"><i class="icon bi-facebook"></i></a>
+    <a href="https://www.instagram.com/gemscaterers/" target="_blank"><i class="icon bi-instagram"></i></a>
+  </div>
+  <div class="d-flex gap-4">
+    <span style="color: black; font-weight: 700; font-size: 1.3rem;"><i class="bi-telephone-fill me-1"></i>0333-2702299</span>
+    <span style="color: black; font-weight: 700; font-size: 1.3rem;"><i class="bi-telephone-fill me-1"></i>0336-2702299</span>
+    <span style="color: black; font-weight: 700; font-size: 1.3rem;"><i class="bi-envelope-fill me-1"></i>info@eventify.pk</span>
+  </div>
+</div>
+
+<!--  Responsive Navbar -->
+<nav class="navbar navbar-expand-lg px-3 py-5 pb-0 pt-0" style="position: absolute; width: 100%;top: 50px;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.png" alt="logo" style="width: 170px;" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon" style="font-size: 3.5rem; font-weight: 800;"><i class="bi bi-list"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-4">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--  Hero Section wrapper -->
+<section class="hero-section">
+  <img src="images/img3.webp" class="img-fluid" alt="gallery-header-image">
+    <div class="hero-text pt-5" style="color: black;">
+      <h1 class="display-4 fw-semibold text-light">Captured Memories</h1>
+      <p class="lead text-light">A picture speaks louder than words. Explore our gallery to see how we bring your vision to life.</p>
+      <a class="btn btn-warning btn-lg mt-3" href="#">View Full Gallery</a>
+
+      <div class="mt-3">
+        <a href="index.html" style="color:#fff;text-decoration:none;font-size:1.8rem;font-weight:800;">Home</a>
+        <span style="color:#ffc107;font-weight:800;"> / </span>
+        <a href="gallery.html" style="color:#ffc107;text-decoration:none;font-size:1.8rem;font-weight:800;">Gallery</a>
+      </div>
+    </div>
+</section>
+
+<!-- Header gallery Section -->
+<header>
+  <h1>A Gallery of Memorable Event Clips</h1>
+  <p>"Video", "Gallery", "Unforgettable Events" More poetic and emotional.</p>
+</header>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/imgs8.webp" target="_blank">
+          <img src="images/imgs8.webp" alt="Image 1">
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/gallery-img-2.webp" target="_blank">
+          <img src="images/gallery-img-2.webp" alt="Image 2">
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/imgs9.webp" target="_blank">
+          <img src="images/imgs9.webp" alt="Image 3">
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/gallery-img-4.webp" target="_blank">
+          <img src="images/gallery-img-4.webp" alt="Image 4">
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/gallery-page-img1.jpg" target="_blank">
+          <img src="images/gallery-page-img1.jpg" alt="Image 5">
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/gallery-img-6.webp" target="_blank">
+          <img src="images/gallery-img-6.png" alt="Image 6">
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="#" target="_blank">
+          <img src="images/gallery-page-img2.jpg" alt="Image 7">
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="https://digitalforge.qa/images/codepen/walls/8.jpg" target="_blank">
+          <video width="100%" height="100%" autoplay muted loop controls>
+          <source src="videos/hero-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/gallery-page-img4.jpg" target="_blank">
+          <img src="images/gallery-page-img4.jpg" alt="Image 8">
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="#" target="_blank">
+          <video width="100%" height="100%" controls>
+          <source src="videos/vedio-for-web.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="http://127.0.0.1:5501/images/gallery-page-img3.jpg" target="_blank">
+          <img src="images/gallery-page-img3.jpg" alt="Image 8">
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="https://digitalforge.qa/images/codepen/walls/8.jpg" target="_blank">
+          <video width="100%" height="100%" controls>
+          <source src="videos/vedio-for-web.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="https://digitalforge.qa/images/codepen/walls/8.jpg" target="_blank">
+          <img src="images/imgs1.webp" alt="Image 8">
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="https://digitalforge.qa/images/codepen/walls/8.jpg" target="_blank">
+          <img src="images/imgs2.webp" alt="Image 8">
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="https://digitalforge.qa/images/codepen/walls/8.jpg" target="_blank">
+          <img src="images/imgs3.webp" alt="Image 8">
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="https://digitalforge.qa/images/codepen/walls/8.jpg" target="_blank">
+          <img src="images/imgs4.webp" alt="Image 8">
+        </a>
+      </div>
+
+      
+      <!-- Add more images here as desired -->
+    </div>
+
+    <!-- Text paragraph under gallery -->
+    <div class="mt-4">
+      <p style="font-family: 'Quicksand', sans-serif; font-size: 16px; text-align: justify;">
+        At Ghouri Event Management, we believe every moment deserves to be unforgettable. 
+        With years of experience in curating extraordinary weddings, corporate events, birthdays, and more, 
+        we bring your visions to life with creativity, precision, and passion. 
+        From elegant decor to flawless coordination, our team is dedicated to transforming your special day 
+        into a truly magical experience. We don’t just plan events — we create memories that last a lifetime.
+        <br><br>
+        Suspendisse sit amet dui efficitur, venenatis est vel, blandit lorem. Proin eget elit ex. Donec ut tellus nibh. Proin luctus vulputate congue. In ipsum risus, cursus vel semper ac, posuere vel enim. Vivamus et est nec quam accumsan malesuada. Vestibulum facilisis dolor a suscipit convallis. Pellentesque sodales ante justo, sed pharetra enim lobortis sit amet.
+      </p>
+
+      <p>
+          Our gallery showcases the essence of what we do — heart-touching ceremonies, lively celebrations, 
+          and the joy in every detail. Whether it's a grand stage setup or an intimate gathering, 
+          Ghouri Event Management ensures perfection at every step. Let us be part of your next big moment, 
+          and experience event planning redefined.
+      </p>
+    </div>
+  </div>
+</section>
+
+ <!-- footer -->
+<footer class="footer">
+  <div class="footer-background"></div>
+  <div class="footer-overlay">
+    <div class="container">
+      <div class="footer-content">
+        <div class="row">
+          <!-- Logo & About -->
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-col">
+            <div class="footer-logo">
+              <a href="#"><img src="images/logo.png" alt="Logo"></a>
+            </div>
+            <p>Delivering unforgettable events and exquisite catering with passion and precision..</p>
+            <ul class="footer-social">
+              <li><a href="https://www.facebook.com/gemscateres"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="https://wa.me/92333-2702299"><i class="fab fa-whatsapp"></i></a></li>
+              <li><a href="https://www.instagram.com/gemscaterers/"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="#">Wedding Event Planning<</a></li>
+              <li><a href="#">Birthday & Theme Parties</a></li>
+              <li><a href="#">Corporate Event Management</a></li>
+              <li><a href="#">Catering Services</a></li>
+              <li><a href="#">Photography & Videography</a></li>
+              <li><a href="#">Stage & Venue Decoration</a></li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-col">
+            <h4>Contact Us</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Lorem Ipsum, Chandigarh</p>
+            <p><i class="fas fa-phone"></i> 0333-2702299</p>
+            <p><i class="fas fa-envelope"></i> GMPS@example.com</p>
+          </div>
+
+           <p style="padding: 20px; text-align: center;">&copy; 2025 <a href="#" style="color: #e0a30e; text-decoration: none;">Ghouri Event Management Services & Caterers</a>. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+  <i class="bi bi-arrow-up-circle-fill" style="font-size: 50px;"></i>
+</button>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
