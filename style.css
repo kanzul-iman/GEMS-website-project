@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html body{
+  overflow-x: hidden ;
+}
+
 /* Black glassy overlay (blur + transparency) */
 .video-overlay {
   position: fixed;
